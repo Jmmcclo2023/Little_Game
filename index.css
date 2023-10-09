@@ -6,7 +6,7 @@
 #game {
     width: 500px;
     height: 200px;
-    border: 1px solid block;
+    border: 1px solid black;
 }
 
 #character {
@@ -17,8 +17,18 @@
     top: 150px;
 }
 
+#obstacle {
+    width: 20px;
+    height: 20px;
+    background-color: coral;
+    position: relative;
+    top: 130px;
+    left: 480px;
+    animation: obstacle 2s infinite linear;
+}
+
 .animate {
-    animation: jump 500ms;
+    animation: jump 500ms; 
 }
 
 @keyframes obstacle {
