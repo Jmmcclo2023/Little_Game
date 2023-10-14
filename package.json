@@ -1,0 +1,14 @@
+{
+  "name": "little_game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jalen McCloud",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.157.0"
+  }
+}
