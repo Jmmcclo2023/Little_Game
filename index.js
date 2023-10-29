@@ -27,6 +27,6 @@ var checkDead = setInterval(function() {
         characterTop >= 130) {
             obstacle.style.animation = "none";
             obstacle.style.display = "none";
-            alert("game over");
+            // alert("game over");
         }
 }, 10);
