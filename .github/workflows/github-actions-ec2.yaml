@@ -27,7 +27,7 @@ jobs:
           SCRIPT_BEFORE: |
             pwd
             ls -al
-            sudo /var/www/littleGame
+            sudo cd /var/www/littleGame
           SCRIPT_AFTER: |
             pwd
             ls -l
