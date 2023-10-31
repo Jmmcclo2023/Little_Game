@@ -14,13 +14,13 @@ jobs:
       - name: Checkout the files
         uses: actions/checkout@v4
         
-      - name: Deploy to Server
-        run: ssh -v -i ${{ secrets.EC2_SSH_KEY }} ubuntu@18.220.150.224
-#        run: ssh -v -i ${{ secrets.EC2_SSH_KEY }} ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }}
-#      - name: Deploy to Server 1
-#        uses: easingthemes/ssh-deploy@main
-#        env:
-#          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-#         REMOTE_HOST: ${{ secrets.HOST_DNS }}
-#          REMOTE_USER: ${{ secrets.USERNAME }}
-#          TARGET: ${{ secrets.TARGET_DIR }}
+#      - name: Deploy to Server
+#        run: ssh -v -i ${{ secrets.EC2_SSH_KEY }} ubuntu@18.220.150.224
+#       run: ssh -v -i ${{ secrets.EC2_SSH_KEY }} ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }}
+      - name: Deploy to Server 1
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET_DIR }}
