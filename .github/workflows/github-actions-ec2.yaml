@@ -24,7 +24,7 @@ jobs:
           ARGS: '--rsync-path="cd /var/www/littleGame"'
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
-          TARGET: ${{ secrets.TARGET_DIR }}
+#          TARGET: ${{ secrets.TARGET_DIR }}
           SCRIPT_BEFORE: |
             pwd
             ls -al
