@@ -21,13 +21,13 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          ARGS: '--rsync-path="cd /var/www/littleGame"'
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
           SCRIPT_BEFORE: |
             pwd
             ls -al
-            cd /var/www/littleGame
           SCRIPT_AFTER: |
             pwd
             ls -l
