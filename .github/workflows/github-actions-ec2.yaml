@@ -14,36 +14,41 @@ jobs:
       - name: Checkout the files
         uses: actions/checkout@v4
 
-      - name: SSH into EC2
-        run: |
-          pwd
-          ls -al
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/FirstWebServer_Key.pem
-          ls -al
+#      - name: SSH into EC2
+#        run: |
+#          pwd
+#          ls -al
+#          echo "$SSH_PRIVATE_KEY" > ~/.ssh/FirstWebServer_Key.pem
+ #         ls -al
           
 #          ssh -v -i key.pem ubuntu@18.220.150.224
 #          pwd
 #          ls
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+ #       env:
+ #         SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           
 #      - name: Deploy to Server
 #        run: ssh -v -i ${{ secrets.EC2_SSH_KEY }} ubuntu@18.220.150.224
 #       run: ssh -v -i ${{ secrets.EC2_SSH_KEY }} ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }}
 
-#      - name: Deploy to Server 1
-#        uses: easingthemes/ssh-deploy@main
-#        env:
-#          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-#          ARGS: "--rsync-path=sudo"
-#          REMOTE_HOST: ${{ secrets.HOST_DNS }}
-#          REMOTE_USER: ${{ secrets.USERNAME }}
-#          TARGET: ${{ secrets.TARGET_DIR }}
-#          SCRIPT_BEFORE: |
-#            pwd
-#            ls -al
-#          SCRIPT_AFTER: |
-#            pwd
-#            ls -l
-#            whoami
+      - name: Deploy to Server 1
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          ARGS: "--rsync-path=sudo"
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET_DIR }}
+            
+      - name: Remote SSH Commands with SSH Key
+        uses: appleboy/ssh-action@main
+        with:
+          host: ${{ secrets.HOST_DNS }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          scripts: |
+            cd ~/git_pitstop
+            sudo mv */var/www/littleGame 
+
+      
         
