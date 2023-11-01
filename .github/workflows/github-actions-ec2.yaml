@@ -18,7 +18,7 @@ jobs:
         run: |
           pwd
           ls -al
-          echo "$SSH_PRIVATEKEY" | tr -d '\r' > key.pem
+          echo "$SSH_PRIVATE_KEY" | tr -d '\r' > key.pem
           ssh -v -i key.pem ubuntu@18.220.150.224
           pwd
           ls
