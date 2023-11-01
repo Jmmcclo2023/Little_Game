@@ -13,23 +13,30 @@ jobs:
     steps:
       - name: Checkout the files
         uses: actions/checkout@v4
-        
+
+      - name: SSH into EC2
+        run: |
+          ssh -v -i "$SSH_PRIVATE_KEY" ubuntu@18.220.150.224
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          
 #      - name: Deploy to Server
 #        run: ssh -v -i ${{ secrets.EC2_SSH_KEY }} ubuntu@18.220.150.224
 #       run: ssh -v -i ${{ secrets.EC2_SSH_KEY }} ${{ secrets.USERNAME }}@${{ secrets.HOST_DNS }}
-      - name: Deploy to Server 1
-        uses: easingthemes/ssh-deploy@main
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          ARGS: "--rsync-path=sudo"
-          REMOTE_HOST: ${{ secrets.HOST_DNS }}
-          REMOTE_USER: ${{ secrets.USERNAME }}
-          TARGET: ${{ secrets.TARGET_DIR }}
-          SCRIPT_BEFORE: |
-            pwd
-            ls -al
-          SCRIPT_AFTER: |
-            pwd
-            ls -l
-            whoami
+
+#      - name: Deploy to Server 1
+#        uses: easingthemes/ssh-deploy@main
+#        env:
+#          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+#          ARGS: "--rsync-path=sudo"
+#          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+#          REMOTE_USER: ${{ secrets.USERNAME }}
+#          TARGET: ${{ secrets.TARGET_DIR }}
+#          SCRIPT_BEFORE: |
+#            pwd
+#            ls -al
+#          SCRIPT_AFTER: |
+#            pwd
+#            ls -l
+#            whoami
         
