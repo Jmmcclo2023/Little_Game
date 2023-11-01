@@ -18,10 +18,11 @@ jobs:
         run: |
           pwd
           ls -al
-
           echo "$SSH_PRIVATE_KEY" > FirstWebServer_Key.pem
+          cd /.ssh
           ls -al
-          ssh -v -i key.pem ubuntu@18.220.150.224
+          
+#          ssh -v -i key.pem ubuntu@18.220.150.224
 #          pwd
 #          ls
         env:
