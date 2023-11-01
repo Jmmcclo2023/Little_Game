@@ -16,7 +16,9 @@ jobs:
 
       - name: SSH into EC2
         run: |
-          ssh -v -i "$SSH_PRIVATE_KEY" ubuntu@18.220.150.224
+           pwd
+           ls -al
+#          ssh -v -i "$SSH_PRIVATE_KEY" ubuntu@18.220.150.224
         env:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           
