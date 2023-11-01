@@ -18,8 +18,7 @@ jobs:
         run: |
           pwd
           ls -al
-          echo "$SSH_PRIVATE_KEY" > FirstWebServer_Key.pem
-          cd ~
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/FirstWebServer_Key.pem
           ls -al
           
 #          ssh -v -i key.pem ubuntu@18.220.150.224
