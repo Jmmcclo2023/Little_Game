@@ -46,6 +46,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            rm /var/www/littleGame/*
             cd ~/git_pitstop
             sudo mv * /var/www/littleGame 
 
