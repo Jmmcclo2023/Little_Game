@@ -1,4 +1,4 @@
-import * as ThreeStuff from './src/graphics/ThreeStuff.js';
+import * as ThreeStuff from '/src/graphics/ThreeStuff.js';
 
 
 // Character State

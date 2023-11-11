@@ -84,5 +84,11 @@ LITTLE GAME CSS
     100% {top: 150px;}
 }
 
+LITTLE GAME HTML
+        <!-- <div id="game">
+            <div id="character"></div>
+            <div id="obstacle"></div>
+        </div> -->
+
 
 */

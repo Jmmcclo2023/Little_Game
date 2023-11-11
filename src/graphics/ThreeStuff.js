@@ -1,4 +1,5 @@
-import * as THREE from 'three/build/three.module.js';
+import * as THREE from '/node_modules/three/build/three.module.js';
+import { PerspectiveCamera } from '/node_modules/three/build/three.module.js';
 // https://threejsfundamentals.org/threejs/resources/threejs/r122/build/three.module.js
 
 // import { OrbitControls } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js';
@@ -10,13 +11,13 @@ import { GLTFLoader } from 'https://threejsfundamentals.org/threejs/resources/th
 
 
 // SET UP
-// Need a scene, a camera, and a rendere
+// Need a scene, a camera, and a renderer
 
 // Scene
 const scene = new THREE.Scene();
 
 // Perspective Camera
-const camera = new THREE.PerspectiveCamera(
+const camera = new PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
     0.1, 1000
@@ -41,15 +42,15 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 const loader = new GLTFLoader();
 
 
-loader.load( 
-    './GroundAttempt1.gltf', function (gltf) {
-        // scene.add (gltf.asset)
+// loader.load( 
+//     './GroundAttempt1.gltf', function (gltf) {
+//         // scene.add (gltf.asset)
         
-    }, 
-    undefined, 
-    function (error) {
-        console.error(error);
-});
+//     }, 
+//     undefined, 
+//     function (error) {
+//         console.error(error);
+// });
 
 
 // ADDING AN OBJECT
