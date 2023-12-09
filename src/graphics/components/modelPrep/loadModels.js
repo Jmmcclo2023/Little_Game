@@ -22,14 +22,36 @@ async function loadModels() {
         // Basic Color Works
         loader.loadAsync('/assets/models/TV_HEAD_No_Outline_Basic_Color.glb'),
         
-        
+        // Applied Line Art Doesn't Work
+        // loader.loadAsync('/assets/models/Testing_Applying_LineArt.glb'),
+
+        // Applied Wireframe works
+        // loader.loadAsync('/assets/models/Testing_Applying_Wireframe.glb'),
+
+        // The Camera is included 
+        // (Camera is not connected Threejs's camera)
+        // loader.loadAsync('/assets/models/Testing_Include_Camera.glb'),
+
+        // Need to test include camera & removing chunky bordor
+        // Doesn't Work
+        // loader.loadAsync('/assets/models/RemoveBorderEverythingChecked.glb'),
+
+
+        // Includes the Light as well 
+        // (The line art still doesnt work though)
+        // loader.loadAsync('/assets/models/Testing_Include_AllData.glb'),
+
+        // Doesn't Work
+        // loader.loadAsync('/assets/models/Testing_Wireframe.glb'),
+
+        // Flamingo
         // loader.loadAsync('/assets/models/Flamingo.glb'),
     ]);
 
-    const tvHead = setupModel(tvHeadData);
+    // const tvHead = setupModel(tvHeadData);
     // tvHead.position.set(x,y,z);
 
-    // const flamingo = setupModel(flamingoData);
+    const tvHead = setupModel(tvHeadData);
 
     return {
         tvHead,

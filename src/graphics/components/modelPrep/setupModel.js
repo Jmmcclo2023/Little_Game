@@ -4,6 +4,8 @@ function setupModel(data) {
     // let model = data.scene.children[0];
     const model = data.scene;
 
+    // console.log(data);
+    // console.log(data.cameras[0]);
     // Doesn't work
     // const model = data;
     
