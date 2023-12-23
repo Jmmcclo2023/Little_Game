@@ -39,16 +39,21 @@ function objRot (obj) {
 // Maybe us zoom factor? (Default is 1)
 function zoomIn (obj, vec) {
     obj.getWorldDirection(vec);
-    console.log(vec);
-    console.log(MathUtils.radToDeg(vec.x));
-    console.log(vec.x);
+    // console.log(vec);
+    // console.log(obj.rotation);
+    // console.log(MathUtils.radToDeg(obj.rotation.y));
+    // console.log(MathUtils.radToDeg(vec.x));
+    // console.log(vec.x);
 
-    obj.lookAt(-10, 0, 0);
+    obj.lookAt(-1, 0, 0);
 
     obj.getWorldDirection(vec);
-    console.log(vec);
-    console.log(MathUtils.radToDeg(vec.x));
-    console.log(vec.x);
+    // console.log(vec);
+    // console.log(MathUtils.radToDeg(vec.x));
+    // console.log(vec.x);
+    // console.log(vec);
+    // console.log(obj.rotation);
+    // console.log(MathUtils.radToDeg(obj.rotation.y));
 }
 
 // Zoom Out

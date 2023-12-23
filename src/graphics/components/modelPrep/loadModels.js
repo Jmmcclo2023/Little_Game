@@ -20,7 +20,7 @@ async function loadModels() {
         // loader.loadAsync('/assets/models/TV_HEAD_WireFrame_Outline_Chunky_Border_Basic_Color.glb'),
 
         // Basic Color Works
-        loader.loadAsync('/assets/models/TV_HEAD_No_Outline_Basic_Color.glb'),
+        // loader.loadAsync('/assets/models/TV_HEAD_No_Outline_Basic_Color.glb'),
         
         // Applied Line Art Doesn't Work
         // loader.loadAsync('/assets/models/Testing_Applying_LineArt.glb'),
@@ -36,7 +36,6 @@ async function loadModels() {
         // Doesn't Work
         // loader.loadAsync('/assets/models/RemoveBorderEverythingChecked.glb'),
 
-
         // Includes the Light as well 
         // (The line art still doesnt work though)
         // loader.loadAsync('/assets/models/Testing_Include_AllData.glb'),
@@ -46,6 +45,9 @@ async function loadModels() {
 
         // Flamingo
         // loader.loadAsync('/assets/models/Flamingo.glb'),
+
+        // Model with Animation Clips Included
+        loader.loadAsync('/assets/models/Head_with_Animations.glb'),
     ]);
 
     // const tvHead = setupModel(tvHeadData);

@@ -12,12 +12,22 @@ async function main() {
 
     // This does work
     container.addEventListener("click", () => {
-        if (world.getIdleState()) {
-            world.stop();
-            world.openAnim();
-            world.render();
-            world.flipIdleState();
+
+        if (world.getObjState() == 'idle') {
+            world.setState('zoomIn');
+            // console.log(world.getObjState());
+            // world.getObj().position.set(-9, -6, 5);
+            // world.getObj().translateOnAxis(world.makeVector(-9,-6,5), 0.5);
+            // console.log(world.getObj().rotation.y);
         }
+        
+
+        // if (world.getIdleState()) {
+        //     world.stop();
+        //     world.openAnim();
+        //     world.render();
+        //     world.flipIdleState();
+        // }
 
         /*
         else {
@@ -35,11 +45,16 @@ async function main() {
     window.addEventListener("keydown", (e) => {
         switch (e.key) {
             case "Escape":
-                if (!world.getIdleState()) {
+                if (world.getObjState() == 'paused') {
+                    world.setState('zoomOut')
                     world.start();
-                    // call ZoomOut
-                    world.flipIdleState();
                 }
+
+                // if (world.getObjState() != 'idle') {
+                //     world.setState('idle');
+                // }
+
+                
                 break;
             default:
                 return;

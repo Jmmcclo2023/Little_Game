@@ -92,3 +92,18 @@ LITTLE GAME HTML
 
 
 */
+
+/*
+ASYNC WORLD INIT
+
+// Works, but no line art
+        // const { tvCamera } = await loadCamera();
+        // scene.add(tvCamera);
+
+        // Also Works, still no line art
+        // camera = await loadCamera();
+
+        // controls.target.copy(tvHead.position);
+
+        // scene.add(flamingo);
+*/

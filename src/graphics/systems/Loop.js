@@ -10,24 +10,24 @@ class Loop {
         this.updatables = [];
     }
 
-    start() {
+    start(state) {
         this.renderer.setAnimationLoop(() => {
 
-            this.tick();
+            this.tick(state);
 
             this.renderer.render(this.scene, this.camera);
         });
     }
 
-    stop() {
+    stop(state) {
         this.renderer.setAnimationLoop(null);
     }
 
-    tick() {
+    tick(state) {
         const delta = clock.getDelta();
 
         for (const object of this.updatables) {
-            object.tick(delta);
+            object.tick(state, delta);
         }
     }
 }
