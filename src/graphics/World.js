@@ -10,9 +10,6 @@ import { createRenderer } from "./systems/renderer.js";
 import { Resizer } from "./systems/Resizer.js";
 import { Loop } from "./systems/Loop.js";
 
-import { zoomIn } from "./systems/animations.js";
-import { Vector3 } from "/node_modules/three/src/math/Vector3.js";
-
 
 
 
@@ -90,18 +87,6 @@ class World {
     setState(state) {
         objState = state;
         // loop.changeState(state);
-    }
-
-    openAnim() {
-        let a = new Vector3();
-
-        zoomIn(targetObj, a);
-
-        // console.log(a);
-    }
-
-    makeVector(x, y, z) {
-        return new Vector3(x, y, z);
     }
 }
 

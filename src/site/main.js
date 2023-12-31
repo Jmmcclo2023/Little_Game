@@ -1,4 +1,6 @@
 import { World } from './../graphics/World.js';
+import '../styles/main.css';
+import '../assets/models/Flamingo.glb';
 
 async function main() {
 
@@ -12,9 +14,11 @@ async function main() {
 
     // This does work
     container.addEventListener("click", () => {
+        console.log('hello!');
 
         if (world.getObjState() == 'idle') {
             world.setState('zoomIn');
+            
             // console.log(world.getObjState());
             // world.getObj().position.set(-9, -6, 5);
             // world.getObj().translateOnAxis(world.makeVector(-9,-6,5), 0.5);

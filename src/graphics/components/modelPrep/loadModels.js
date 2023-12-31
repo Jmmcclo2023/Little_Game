@@ -2,10 +2,16 @@
 // import { GLTFLoader } from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/loaders/GLTFLoader.js';
 import { GLTFLoader } from "../../../../vendor/three/examples/jsm/loaders/GLTFLoader.js";
 import { setupModel } from "./setupModel.js";
+// import * as modelFile from '../../../assets/models/Head_with_Animations.glb';
+import '../../../assets/models/Head_with_Animations.glb';
 
 async function loadModels() {
     const loader = new GLTFLoader();
 
+    // console.log((modelFile));
+    
+    // const url = URL.createObjectURL(modelFile);
+    
     // List glb files here
     const [ tvHeadData ] = await Promise.all([
         // loader.loadAsync('/assets/models/file.glb'),
@@ -47,7 +53,8 @@ async function loadModels() {
         // loader.loadAsync('/assets/models/Flamingo.glb'),
 
         // Model with Animation Clips Included
-        loader.loadAsync('/assets/models/Head_with_Animations.glb'),
+        // '/assets/models/Head_with_Animations.glb'
+        loader.loadAsync('../../../assets/models/Head_with_Animations.glb'),
     ]);
 
     // const tvHead = setupModel(tvHeadData);

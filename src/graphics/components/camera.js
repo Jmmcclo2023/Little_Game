@@ -1,5 +1,6 @@
 // import * as THREE from '/node_modules/three/build/three.module.js';
 import { PerspectiveCamera } from '/node_modules/three/build/three.module.js';
+// import { PerspectiveCamera } from './../../../vendor/three/build/three.module.js';
 
 // import { setupCamera } from './modelPrep/setupCamera';
 

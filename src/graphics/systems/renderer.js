@@ -1,4 +1,5 @@
 import { WebGLRenderer } from '/node_modules/three/src/renderers/WebGLRenderer.js';
+// import { WebGLRenderer } from './../../../vendor/three/src/renderers/WebGLRenderer.js';
 // import { WebGLRenderer } from '/three';
 
 
