@@ -47,8 +47,13 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             rm -r /var/www/littleGame/*
-            cd ~/git_pitstop
-            sudo mv * /var/www/littleGame 
+            cd ~/git_pitstop/dist
+            sudo mv * /var/www/littleGame
+            cd ~
+            rm -r ~/git_pitstop/*
+
+#            cd ~/git_pitstop
+#            sudo mv * /var/www/littleGame 
 
       
         
